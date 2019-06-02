@@ -144,10 +144,10 @@ if ENVIRONMENT == 'production':
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tabooapi',
+        'NAME': 'd3knfvb9iiomb6',
         'USER': os.environ.get('DB_USERNAME', ''),
         'PASSWORD': os.environ.get('DB_PASS', ''),
-        'HOST': 'localhost',
+        'HOST': os.environ.get('DATABASE_URL', ''),
         'PORT': '5432',
     }
 }
