@@ -15,8 +15,8 @@ SECRET_KEY = '^+%!mnsrflamqkz!)dv&7kxt%zct-^)_c41+e59nxx$#%r0z*u'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'bridleitapi.herokuapp.com/',
-    '127.0.0.1:8000/'
+    'bridleitapi.herokuapp.com',
+    '127.0.0.1:8000'
     ]
 
 CORS_ORIGIN_ALLOW_ALL = True
