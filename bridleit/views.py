@@ -9,10 +9,8 @@ from bridleit.serializers import WordSerializer
 
 class WordViewSet(viewsets.ModelViewSet):
     """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
-
-    Additionally we also provide an extra `highlight` action.
+    Remember that when adding a word, the taboo words must be comma separated like so:
+    Eve, First Man, Dust, Father 
     """
     queryset = Word.objects.all()
     serializer_class = WordSerializer
