@@ -6,7 +6,6 @@
 *h
 env
 venv
-migrations
 
 # Accept these files in the repository
 !.gitignore
