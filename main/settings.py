@@ -147,7 +147,7 @@ if ENVIRONMENT == 'production':
         'NAME': 'd3knfvb9iiomb6',
         'USER': os.environ.get('DB_USERNAME', ''),
         'PASSWORD': os.environ.get('DB_PASS', ''),
-        'HOST': os.environ.get('DATABASE_URL', ''),
+        'HOST': os.environ.get('DB_HOST', ''),
         'PORT': '5432',
     }
 }
