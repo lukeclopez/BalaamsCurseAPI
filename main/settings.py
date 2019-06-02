@@ -130,7 +130,7 @@ REST_FRAMEWORK = {
 }
 
 if ENVIRONMENT == 'production':
-    DEBUG = False
+    DEBUG = os.environ.get('DEBUG', 'False'),
     SECRET_KEY = os.getenv('SECRET_KEY')
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
