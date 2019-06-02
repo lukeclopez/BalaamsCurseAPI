@@ -1,6 +1,4 @@
 import os
-import dj_database_url
-import django_heroku
 
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
@@ -141,6 +139,12 @@ if ENVIRONMENT == 'production':
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    
+    CORS_ORIGIN_ALLOW_ALL = False
+
+    CORS_ORIGIN_WHITELIST = (
+        "https://lukeclopez.github.io/BridleIt/",
+    )
 
     DATABASES = {
     'default': {
@@ -152,5 +156,3 @@ if ENVIRONMENT == 'production':
         'PORT': '5432',
     }
 }
-
-django_heroku.settings(locals())
