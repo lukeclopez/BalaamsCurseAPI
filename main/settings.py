@@ -1,5 +1,6 @@
 import os
 import dj_database_url
+import django_heroku
 
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
@@ -151,3 +152,5 @@ if ENVIRONMENT == 'production':
         'PORT': '5432',
     }
 }
+
+django_heroku.settings(locals())
