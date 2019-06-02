@@ -14,7 +14,10 @@ SECRET_KEY = '^+%!mnsrflamqkz!)dv&7kxt%zct-^)_c41+e59nxx$#%r0z*u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'bridleitapi.herokuapp.com/',
+    '127.0.0.1:8000/'
+    ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -139,12 +142,6 @@ if ENVIRONMENT == 'production':
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    
-    CORS_ORIGIN_ALLOW_ALL = False
-
-    CORS_ORIGIN_WHITELIST = (
-        "https://lukeclopez.github.io/BridleIt/",
-    )
 
     DATABASES = {
     'default': {
