@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'bridleitapi.herokuapp.com',
-    '127.0.0.1:8000'
+    '127.0.0.1'
     ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -33,11 +33,14 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'rest_framework',
+    'axes',
     'bridleit.apps.BridleItConfig',
 ]
 
 MIDDLEWARE = [
+    # MUST BE FIRST
     'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -47,6 +50,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # MUST BE LAST
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -103,6 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME':
         'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Internationalization
